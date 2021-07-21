@@ -1,16 +1,10 @@
-clearvars all; close all;
-%% github
-% 파일 처음: 깃에 추가 -> 변경 사항 확인 및 커밋 ->push
-% 추가된 파일: 변경 사항 확인 및 커밋 -> push
-
 %% 딥러닝 첫걸음
 %% 한빛미디어, 김성필
 %% Practice: Hae-Chang Lee, gockdd1677@gmail.com
-% need to optimization
-
-
+ 
 %% Chapter 2. Neural network
-%% Example (1) SGD (Stochastic Gradient Descent)
+%% Example (2) SGD (Stochastic Gradient Descent)
+% batch 
 %
 %% Learning Data
 % Input
@@ -28,14 +22,11 @@ D = [0; 0; 1; 1];
 % simply set to 1
 W = [1 1 1];
 
-% Weight Update
-% for epoch = 1:10000
-%     W = DeltaSGD(W,X,D);
-% end
 
 iter = 0;
+
 while 1
-    W = DeltaSGD(W,X,D);
+    W = DeltaBatch(W,X,D);
     for i = 1:N
         x = X(i,:)';
         v = W*x;
@@ -54,9 +45,8 @@ while 1
     if iter > 100000
         fprintf('Neuralnet not converging\n')
         break;
-    end
+    end 
 end
-
 
 fprintf(1,'<Inferenced Result> \nD(1): %6.4f, D(2): %6.4f, D(3): %6.4f, D(4): %6.4f\n', res(1),res(2), res(3), res(4))
 
