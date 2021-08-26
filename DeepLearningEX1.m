@@ -11,7 +11,7 @@ clearvars all; close all;
 
 %% Chapter 2. Neural network
 %% Example (1) SGD (Stochastic Gradient Descent)
-%
+%  
 %% Learning Data
 % Input
 % X -> c(n): n-th input data
