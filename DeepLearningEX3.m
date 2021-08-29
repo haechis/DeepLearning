@@ -2,7 +2,7 @@ clearvars all; close all;
 %% 딥러닝 첫걸음
 %% 한빛미디어, 김성필
 %% Practice: Hae-Chang Lee, gockdd1677@gmail.com
- 
+% 2021.08.29
 %% Chapter 3. Multi Layer Neural network
 %% Example (1) XOR Problem
 
