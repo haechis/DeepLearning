@@ -20,7 +20,7 @@ for k = 1:N
     
     % error
     e = d - y;
-    delta = y.*(1-y).*e;
+    delta = e;
      
     % delta of output nodes
     e1 = W2' * delta;

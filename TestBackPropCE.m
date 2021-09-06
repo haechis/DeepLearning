@@ -42,17 +42,19 @@ while 1
     end
     errs_ = y - D';
     
-    check  =  errs_ < 1e-2;
+    check  =  errs_ < 1e-3;
     
     if check(1) && check(2) && check(3) && check(4)
         fprintf('Iteration: %d\n',iter)
+        fprintf(1,'<Estimated> %6.4f, %6.4f, %6.4f, %6.4f\n',y(1),y(2),y(3),y(4))
         break;
     end
     
      
     iter = iter + 1;
-    if iter > 100000
-        fprintf('Neuralnet not converging\n')
+    if iter > 10000
+        fprintf('Over Max Iteration\n')
+        fprintf(1,'<Estimated> %6.4f, %6.4f, %6.4f, %6.4f\n',y(1),y(2),y(3),y(4))
         break;
     end 
 end
